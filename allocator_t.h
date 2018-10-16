@@ -4,6 +4,8 @@
 #include <limits>
 #include <cstdlib>
 
+#pragma once
+
 namespace custom_stl 
 {
 
