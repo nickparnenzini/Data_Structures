@@ -7,6 +7,21 @@
 namespace custom_stl 
 {
 
+template <class T1, class T2>
+inline void Construct_Object(T1* p, const T2& value) {
+    new ((void*) p) T1(value);
+}
+
+template <class T1>
+inline void Construct_Object(T1* p) {
+    new ((void*) p) T1();
+}
+
+template <class Tp>
+inline void Destroy_Object(Tp* pointer) {
+    pointer->~Tp();
+}
+
 template <class T>
 class allocator_t 
 {
