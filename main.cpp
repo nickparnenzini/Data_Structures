@@ -9,6 +9,8 @@ int main() {
     bst.insert_node(5);
     if (bst.find_node(5)) {
         std::cout << "BST properly implemented!" << std::endl;
-    } 
+    }
+
+    custom_stl::list_t<int> list_example;
 
 }

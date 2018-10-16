@@ -2,6 +2,7 @@
 #define BINARY_SEARCH_TREE_H
 
 #include "allocator_t.h"
+#include <iostream>
 
 namespace custom_stl
 {
@@ -58,7 +59,7 @@ private:
         }
     }
 
-    void insert_node_bst(bst_node<T>*& node, T value) {
+    void insert_node_bst(bst_node<T>*& node, T value) {  
         if (!node) {
             node = createNode(value);
             return;
@@ -111,7 +112,7 @@ private:
         Alloc_type::deallocate(p, 1);
     } 
 
-    bst_node<T>* m_root;
+    bst_node<T>* m_root {nullptr};
 };
 
 }  // namespace custom_stl
