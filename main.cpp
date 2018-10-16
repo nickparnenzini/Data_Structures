@@ -26,11 +26,11 @@ int main() {
     std::cout << "Size of the list: " << l4.size() << std::endl;
 
     custom_stl::list_t<int> l;
-    
-    l.push_back(2);   std::cout << "The last element in the list is " << l.back() << std::endl; 
-    l.push_back(3);   std::cout << "The last element in the list is " << l.back() << std::endl;  
-    l.push_back(4);   std::cout << "The last element in the list is " << l.back() << std::endl; 
-    l.push_back(5);   std::cout << "The last element in the list is " << l.back() << std::endl; 
+
+    for (int i = 2; i <= 5; i++) {
+        l.push_back(2);
+        std::cout << "The last element in the list is " << l.back() << std::endl; 
+    }
 
     auto it = l.insert(l.begin(), 1);
     std::cout << "Inserting a new element: " << *it << std::endl;
