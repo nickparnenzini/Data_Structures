@@ -96,18 +96,18 @@ class list_t
 
 public:
 
-    typedef T                                                                 value_type;
-    typedef list_node<T>                                                      Node;
-    typedef typename Allocator::pointer                                       pointer;
-    typedef typename Allocator::const_pointer                                 const_pointer;
-    typedef typename Allocator::reference                                     reference;
-    typedef typename Allocator::const_reference                               const_reference;
-    typedef list_t_iterator<T>                                                iterator;    
-    typedef const list_t_iterator<T>                                          const_iterator;
-    typedef std::reverse_iterator<const_iterator>                             const_reverse_iterator;
-    typedef std::reverse_iterator<iterator>                                   reverse_iterator;
-    typedef typename Allocator::size_alloc                                    size_type;
-    typedef std::ptrdiff_t                                                    difference_type;
+    typedef T                                     value_type;
+    typedef list_node<T>                          Node;
+    typedef typename Allocator::pointer           pointer;
+    typedef typename Allocator::const_pointer     const_pointer;
+    typedef typename Allocator::reference         reference;
+    typedef typename Allocator::const_reference   const_reference;
+    typedef list_t_iterator<T>                    iterator;    
+    typedef const list_t_iterator<T>              const_iterator;
+    typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+    typedef std::reverse_iterator<iterator>       reverse_iterator;
+    typedef typename Allocator::size_alloc        size_type;
+    typedef std::ptrdiff_t                        difference_type;
 
     list_t() {
 
