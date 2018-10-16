@@ -119,7 +119,7 @@ public:
         tail = head; 
         size_list = 1;  
         Node* p  = head;
-        Node* q  = nullptr;  std::cout << "head->m_next: " << head->m_next << std::endl;
+        Node* q  = nullptr;
         while (n > 1) {  
             Node* tmp = createNode(val);
             p->m_next = tmp;
@@ -130,7 +130,7 @@ public:
             n--;
             size_list++;
             tail = p; 
-        } std::cout << "End!" << std::endl;
+        } 
     }
 
     ~list_t() {
