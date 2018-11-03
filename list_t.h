@@ -3,7 +3,7 @@
 
 #include "allocator_t.h"
 #include <iterator>
-
+#include <stddef.h>
 #include <iostream>
 
 namespace custom_stl 
@@ -29,6 +29,7 @@ template < class T>
 class list_t_iterator
 {
 public:
+
     list_t_iterator(list_node<T>* pNode) :
                   m_currentNode(pNode)
     {}
@@ -47,9 +48,7 @@ public:
 
     list_t_iterator operator++(int) {
         list_t_iterator tmp = *this;
-        if (this->m_currentNode != nullptr) {
-            this->m_currentNode = this->m_currentNode->m_next;
-        }
+        ++*this;
         return tmp;
     }
 
@@ -73,9 +72,6 @@ public:
     }
 
     bool operator!=(const list_t_iterator& iterator) {  
-        if (this->m_currentNode == nullptr)
-            return false;
-
         return this->m_currentNode != iterator.m_currentNode;
     }
 
@@ -104,7 +100,6 @@ public:
     typedef typename Allocator::const_reference   const_reference;
     typedef list_t_iterator<T>                    iterator;    
     typedef const list_t_iterator<T>              const_iterator;
-    typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
     typedef std::reverse_iterator<iterator>       reverse_iterator;
     typedef typename Allocator::size_alloc        size_type;
     typedef std::ptrdiff_t                        difference_type;
@@ -147,19 +142,21 @@ public:
     }
 
     iterator begin() {
-        it = head;
-        return it;    
+        return iterator(head);  
     }
 
-    iterator end() {  
+    iterator end() { 
+        return iterator(nullptr); 
     }
 
+    // TODO
     iterator rbegin() {
-        return reverse_iterator(end());
+        //return reverse_iterator(end());
     }
 
+    // TODO
     iterator rend() {
-        return reverse_iterator(begin());
+        //return reverse_iterator(begin());
     }
 
     reference front() {
@@ -315,7 +312,6 @@ private:
     Node* head {nullptr};
     Node* tail {nullptr};
     size_type size_list {0};
-    list_t_iterator<T> it {head};
 };
 
 }  // namespace custom_stl
