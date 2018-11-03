@@ -5,13 +5,15 @@
 int main() {
 
     // Example for using the data structure binary_search_tree
+
     custom_stl::binary_search_tree<int> bst;
     bst.insert_node(5);
     if (bst.find_node(5)) {
         std::cout << "BST properly implemented!" << std::endl;
     }
 
-   // Calling some methods for the data structure list_t    
+   // Calling some methods for the data structure list_t  
+  
     custom_stl::list_t<int> l4;
 
     l4.push_back(1);
@@ -48,32 +50,4 @@ int main() {
     }
     std::cout << std::endl;
 
-    // erase element at the beginning
-    it = l.erase(l.begin());
-
-    for (it = l.begin(); it != l.end(); it++) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
-    std::cout << "Front element is " << l.front() << std::endl;
-
-    // erase element at the end()
-    it = l.erase(--l.end());
-    for (it = l.begin(); it != l.end(); it++) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
-    std::cout << "Back element is " << l.back() << std::endl;
-
-    // erase another element in the middle (roughly) of the list
-    it  = l.begin();
-    it++; it++;   std::cout << "The element is " << *it << std::endl;
-    l.erase(it);
-    for (it = l.begin(); it != l.end(); it++) {
-        std::cout << *it << " ";
-    }
-    std::cout << std::endl;
-
-    std::cout << "Clear method!" << std::endl;
-    l.clear();
 }
